@@ -109,7 +109,7 @@ ADMIN. Uma requisição autenticada mas sem o papel necessário recebe `403 Forb
 
 ---
 
-### Como testar (roteiro para apresentação)
+### Como testar 
 
 Roteiro pra demonstrar autenticação + autorização por papel.
 
@@ -150,7 +150,7 @@ Authorization: Bearer {{token_user}}
 DELETE http://localhost:8080/api/medicos/1
 Authorization: Bearer {{token_user}}
 ```
-Clique no ▶ ao lado de cada bloco `###`; o token do login é salvo automaticamente para as próximas
+Rodar cada bloco `###` separadamente; o token do login é salvo automaticamente para as próximas
 requisições.
 
 ---
