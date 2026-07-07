@@ -28,6 +28,12 @@ public class ConsultaService {
                 .orElseThrow(() -> new RuntimeException("Paciente não encontrado"));
         Clinica clinica = clinicaRepository.findById(dto.clinicaId())
                 .orElseThrow(() -> new RuntimeException("Clínica não encontrada"));
+
+        // NOVA VALIDAÇÃO: médico deve pertencer à clínica
+        if (!medico.getClinicas().contains(clinica)) {
+            throw new RuntimeException("Médico não atende nesta clínica");
+        }
+
         Consulta c = new Consulta();
         c.setDataHora(dto.dataHora());
         c.setStatus(dto.status() != null ? dto.status() : "AGENDADA");
