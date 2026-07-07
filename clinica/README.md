@@ -1,6 +1,9 @@
-# Sistema de Agendamento de Clínicas
 
-Projeto da disciplina de Programação I (Prof. Francisco Rodrigues — Instituto Federal de Sergipe), referente à avaliação AV2, cujo objetivo é construir uma solução utilizando o ecossistema Spring Boot.
+# Instituto Federal de Sergipe
+# Disciplina: Programação I — Prof. Francisco Rodrigues
+# Alunos: Fabiano Freitas e Aline Santos
+
+# Sistema de Agendamento de Clínicas
 
 ## Sumário
 - [Domínio do problema](#domínio-do-problema)
