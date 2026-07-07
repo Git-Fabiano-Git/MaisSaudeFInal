@@ -36,19 +36,19 @@ public class ConsultaController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN','MEDICO','PACIENTE')")   //  médicos e pacientes também agendam
     public Consulta agendar(@Valid @RequestBody ConsultaDTO dto) {
         return service.agendar(dto);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN','MEDICO')")              // medicos tbm podem editar consultas
     public Consulta atualizar(@PathVariable Long id, @Valid @RequestBody ConsultaDTO dto) {
         return service.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN','MEDICO')")              // médicos tbm podem cancelar consultas
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         service.deletar(id);
         return ResponseEntity.noContent().build();
